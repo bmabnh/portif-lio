@@ -1,0 +1,1 @@
+Estou em constante aprendizado e sempre estudando, ainda nao hospedei meu portifólio porém estarei deixando o código dele aqui e conforme for fazendo mudanças eu também deixarei por escrito, o portifólio é feito de forma simples utilizando apenas HTML 5  e CSS 3, framework é o bootstrap.
