@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brian Moura Andrade | Desenvolvedor Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #00c6ff;
+      --bg: #f4f7fa;
+      --card-bg: #fff;
+      --accent: #ffd600;
+      --radius: 18px;
+      --shadow: 0 4px 32px rgba(13,71,161,0.08);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: #222;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+      color: #fff;
+      padding: 2.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0 0 1.2rem 0;
+      opacity: 0.92;
+    }
+    .header-links {
+      margin-top: 1rem;
+    }
+    .header-links a {
+      color: #fff;
+      margin: 0 0.7rem;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+      text-decoration: none;
+      vertical-align: middle;
+    }
+    .header-links a:hover {
+      color: var(--accent);
+    }
+    nav {
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1rem 0;
+      margin: -1.5rem auto 2.5rem auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+    nav a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.08rem;
+      letter-spacing: 0.5px;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--secondary);
+      color: #fff;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem 3rem 1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      animation: fadeIn 0.8s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 8px 40px rgba(13,71,161,0.13);
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+    .skill {
+      background: linear-gradient(90deg, #e3eafc 60%, #e0f7fa 100%);
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(13,71,161,0.04);
+    }
+    .projects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .project {
+      background: linear-gradient(120deg, #e3eafc 60%, #e0f7fa 100%);
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      box-shadow: 0 2px 8px rgba(13,71,161,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 140px;
+    }
+    .project strong {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+    .project a {
+      color: var(--primary);
+      text-decoration: underline;
+      font-size: 0.98rem;
+      margin-right: 0.7rem;
+    }
+    .project a:hover {
+      color: var(--secondary);
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: var(--secondary);
+      color: #fff;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #cfd8dc;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #f8fafc;
+      transition: border 0.2s;
+    }
+    form input:focus, form textarea:focus {
+      border: 1.5px solid var(--primary);
+      outline: none;
+    }
+    @media (max-width: 900px) {
+      .projects-list {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        gap: 1.2rem;
+      }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      main { padding: 1rem 0.3rem 2rem 0.3rem; }
+      .card { padding: 1.1rem; }
+      .skills-list { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Brian Moura Andrade</h1>
+    <p>Desenvolvedor Web Júnior • Frontend & Backend</p>
+    <div class="header-links">
+      <a href="https://github.com/bmabnh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://drive.google.com/file/d/1KyCoQTxfItTrzkpVFoFr6PMl-C0QTH4k/view?usp=drive_link" class="btn" download>Baixe meu currículo</a>
+    </div>
+  </header>
+  <nav>
+    <a href="#sobre" class="active">Sobre</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <main>
+    <section id="sobre">
+      <div class="card">
+        <h2>Sobre Mim</h2>
+        <p>Sou apaixonado por desenvolvimento web, com foco em criar soluções modernas, escaláveis e de fácil manutenção. Busco oportunidades para crescer como desenvolvedor full stack, contribuindo em projetos inovadores e colaborativos.</p>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="card">
+        <h2>Habilidades Técnicas</h2>
+        <div class="skills-list">
+          <div class="skill"><i class="fab fa-html5"></i> HTML5</div>
+          <div class="skill"><i class="fab fa-css3-alt"></i> CSS3</div>
+          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill"><i class="fab fa-react"></i> React</div>
+          <div class="skill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill"><i class="fas fa-database"></i> SQL</div>
+          <div class="skill"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+          <div class="skill"><i class="fas fa-robot"></i> IA (ChatGPT, Copilot)</div>
+        </div>
+        <ul>
+          <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, responsividade, performance</li>
+          <li><strong>Backend:</strong> Python (Flask), APIs REST, banco de dados relacional</li>
+          <li><strong>Versionamento:</strong> Git, GitHub, Pull Requests, revisão de código</li>
+        </ul>
+      </div>
+    </section>
+    <section id="projetos">
+      <div class="card">
+        <h2>Projetos de Destaque</h2>
+        <div class="projects-list">
+          <div class="project">
+            <strong>Portfólio Pessoal</strong> <br>
+            <a href="https://github.com/bmabnh" target="_blank">GitHub</a>
+            <a href="https://seuportfolio.com" target="_blank">Deploy</a>
+            <p>Carrossel de projetos, animações modernas e formulário de contato funcional.</p>
+          </div>
+          <div class="project">
+            <strong>To-Do List com Flask</strong> <br>
+            <a href="https://github.com/bmabnh" target="_blank">GitHub</a>
+            <p>CRUD completo, estrutura modular e integração front/back.</p>
+          </div>
+          <div class="project">
+            <strong>Clone de UI com IA</strong> <br>
+            <a href="https://github.com/bmabnh" target="_blank">GitHub</a>
+            <p>Interfaces como Netflix e Spotify recriadas com auxílio de IA.</p>
+          </div>
+          <div class="project">
+            <strong>API RESTful de Produtos</strong> <br>
+            <a href="https://github.com/bmabnh" target="_blank">GitHub</a>
+            <p>API RESTful com Flask, autenticação JWT e documentação Swagger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2>Formação Acadêmica</h2>
+        <p><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong><br>Universidade Estácio – Conclusão: 2024</p>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2>Cursos Relevantes</h2>
+        <ul>
+          <li>Python para Web (Flask/Django) – senac</li>
+          <li>Front-End com Inteligência Artificial – senac</li>
+          <li>Git/GitHub – Dio</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2>Idiomas</h2>
+        <ul>
+          <li>Português – Nativo</li>
+          <li>Inglês – Técnico (leitura de documentação)</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="card">
+        <h2>Diferenciais</h2>
+        <ul>
+          <li>Foco em entrega com testes e manutenção simples</li>
+          <li>Disponível para trabalho remoto ou presencial no RJ</li>
+          <li>Comprometido com evolução técnica contínua</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contato">
+      <div class="card">
+        <h2>Contato</h2>
+        <form action="mailto:brnpolarandrd@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
